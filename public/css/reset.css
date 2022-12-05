@@ -1,0 +1,14 @@
+* {margin:0; padding:0; vertical-align: middle; /* 안 쓰면 사진 사이에 작은 틈 생김 */
+    font-size: 100%; box-sizing: border-box; text-size-adjust: 100%;} /* 밴더프리픽스 : 하위 브라우저에서 지원 안 될때 지원되게 해주는 것 -webkit- -moz- -ms- -o- / text-size-adjust : 모바일 반응형 글자크기 조정해주는 것 (갑자기 커지는거 방지용. 100%) */
+html, body {width:100%; height:100%;}
+html {overflow-y: scroll; scroll-behavior: smooth;}
+body {color: #333; background:#fff; font:normal 14px/1 '맑은고딕', 'arial';} /*font-size: 16px; line-height: 100%; font-family: '맑은고딕', 'arial'; font-weight: normal; 와 동일*/
+ul, li {list-style: none;}
+a {color: #333; text-decoration: none;}
+
+/* 선택사항 : 해두면 편함 */
+h1, h2, h3, h4, h5, h6, strong, b {font-weight:normal; font-size:14px;}
+i, em, address {font-style:normal;} /* 안 해주면 이탤릭체로 됨 (기본설정) */
+i, em, strong, span, a, b {vertical-align: baseline;}
+.fixed-clear{content:''; display: block; clear: both;} /* 플롯팅핵 */
+

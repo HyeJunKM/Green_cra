@@ -1,0 +1,104 @@
+@charset "UTF-8"; /* 맨 위에 작성 -> 모든 스타일 인코딩 */
+@import url(./reset.css);
+
+/* #3cb149 #1d8844 #434748 */
+
+#wrap {width: 1200px; margin: 0 auto; position: relative;}
+#wrap #header {width: 100%; height: 100px; display: flex; background: #3cb149; position: relative; z-index: 3;}
+/* 로고 */
+#wrap #header .left {width: 200px; height: 100%;display: flex; justify-content: center; align-items: center;}
+#wrap #header .left h1 {width: 100%;}
+#wrap #header .left h1 a {display: block; width: 100%; height: 40px; display: flex; justify-content: center; align-items: center; border: 1px solid #fff; border-radius: 50px;}
+#wrap #header .left h1 a img {width: 85%;}
+/* 네비게이션 메인메뉴 */
+#wrap #header .right {width: 1000px; height: 100%;}
+#wrap #header .right #nav {width: 700px; height: 50px; margin: 50px 20px 0 auto;}
+#wrap #header .right #nav > ul {display: flex;}
+#wrap #header .right #nav > ul > li {width: 25%;}
+#wrap #header .right #nav > ul > li > a {display: flex; width: 100%; height: 50px; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; color: #fff; transition: all .3s;}
+#wrap #header .right #nav > ul > li > a:hover {background-color: #434748;}
+#wrap #header .right #nav > ul > li > a.on {background-color: #434748;}
+/* 네비게이션 서브메뉴 */
+#wrap #header .right #nav > ul > li > .sub {width: 100%; text-align: center; position: relative; z-index: 2; display: none;} /* padding 금지!! 슬라이드 호버 이벤트에 문제생김 */
+#wrap #header .right #nav > ul > li > .sub.on {display: block;} 
+#wrap #header .right #nav > ul > li > .sub ul {width: 100%; padding: 10px 0;}
+#wrap #header .right #nav > ul > li > .sub ul li {width: 100%;}
+#wrap #header .right #nav > ul > li > .sub ul li a {display: flex; width: 100%; height: 30px; align-items: center; justify-content: center; color: #fff; transition: all .3s;} /* display: block또는 flex;해야 하이라이트 가능 */
+#wrap #header .right #nav > ul > li > .sub ul li a:hover {background: #1d8844; color: #fff;}
+
+#wrap #header .right #nav > ul > li > .sub-bg {width: 100%; height: 110px; background: #434748; position: absolute; left: 0; top: 100px; z-index: 1; display: none;}
+#wrap #header .right #nav > ul > li > .sub-bg.on {display: block;}
+
+#wrap #main {width: 100%; position: relative; z-index: 2;}
+#wrap #main #section1 {width: 100%; height: 300px; background-color: #fff;}
+#wrap #main #section1 .slide-container {width: 100%;}
+#wrap #main #section1 .slide-container .slide-view {width: 100%; overflow: hidden; height: 300px;} /* 상하 슬라이드는 height 필수! */
+#wrap #main #section1 .slide-container .slide-view .slide-wrap {width: calc(100%*5); display: flex; margin-left: -100%; position: relative; left: calc(-100%*0);}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide {width: 100%; position: relative;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide img {width: 100%;}
+/* 슬라이드 텍스트 */
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide a::after {content: ''; position: absolute; top: 50%; left: 0; text-align: center; font-size: 60px; color: #fff; font-weight: 600; margin-top: -30px; width: 100%;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide1 a::after {content: 'Green 복지재단1';}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide2 a::after {content: 'Green 복지재단2';}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide3 a::after {content: 'Green 복지재단3';}
+
+#wrap #main #section2 {width: 100%; height: 200px; padding: 10px 0; display: flex; justify-content: space-between;}
+/* 공지사항 */
+#wrap #main #section2 .left {width: 393.3333333px; height: 100%; position: relative; padding: 40px 0 0 0;}
+#wrap #main #section2 .left .board-box .gap ul li {height: 27px; display: flex; align-items: center; justify-content: space-between; position: relative; padding: 0 0 0 12px;}
+#wrap #main #section2 .left .board-box .gap ul li::before {content: ''; position: absolute; top: 50%; left: 0; width: 2px; height: 2px; margin: -1px; background: #333;}
+#wrap #main #section2 .left .board-box .gap ul li a {color: #555;}
+#wrap #main #section2 .left .board-box .gap ul li a:hover {color: #1d8844; text-decoration: underline;}
+#wrap #main #section2 .left .board-box .gap ul li span {color: #777;}
+
+/* 갤러리 */
+#wrap #main #section2 .center {width: 393.3333333px; height: 100%; position: relative; padding: 40px 0 0 0;}
+#wrap #main #section2 .center .gallery-box {display: flex; align-items: center; justify-content: space-evenly;}
+#wrap #main #section2 .center .gallery-box a img {width: 100px; border: 1px solid #ddd;}
+
+/* 공용버튼 (공지사항,갤러리) */
+#wrap #main #section2 button {width: 100px; height: 41px; position: absolute; top: 0; left: 10px; border: 1px solid #ccc; border-bottom: 0; border-radius: 5px 5px 0 0; background-color: #fff; z-index: 2;}
+#wrap #main #section2 .board-box {width: 100%; height: 140px; background: #fff; border: 1px solid #ccc; z-index: 1; position: relative;}
+#wrap #main #section2 .board-box .gap {padding: 15px 10px;}
+#wrap #main #section2 .board-box .gap ul {width: 100%;}
+
+
+#wrap #main #section2 .right {width: 393.3333333px; height: 100%;}
+#wrap #main #section2 .right .banner {}
+#wrap #main #section2 .right .banner .title {height: 40px; width: 100%; display: flex; align-items: center; justify-content: center;}
+#wrap #main #section2 .right .banner .title h2 {font-size: 15px; font-weight: 500; color: #1d8844;}
+#wrap #main #section2 .right .banner .img-box {width: 100%; border-radius: 30px 0 20px 0 ; height: 140px; border: 1px solid #ccc; display: flex; justify-content: center; align-items: center; overflow: hidden;}
+#wrap #main #section2 .right .banner .img-box a img {width: 100%;}
+
+#wrap #footer {width: 100%; height: 100px; display: flex; justify-content: space-between; position: relative; z-index: 1; background-color: #f0f0f0;}
+#wrap #footer .left {width: 200px; height: 100%; display: flex; align-items: center; justify-content: center;}
+#wrap #footer .left h1 {width: 100%;}
+#wrap #footer .left h1 a {display: block; width: 100%; height: 40px; display: flex; align-items: center; justify-content: center;}
+#wrap #footer .left h1 a img {width: 80%;}
+
+#wrap #footer .center {width: 780px; height: 100%; text-align: center;}
+#wrap #footer .center .row1 {width: 100%; height: 50%; display: flex; justify-content: center; align-items: center;}
+#wrap #footer .center .row1 span {display: inline-block;}
+#wrap #footer .center .row1 span a {color: #999; font-size: 14px;}
+#wrap #footer .center .row1 span a:hover {color: #1d8844;}
+#wrap #footer .center .row1 span i {margin: 0 10px; color: #ccc;}
+
+#wrap #footer .center .row2 {width: 100%; height: 50%;}
+#wrap #footer .center .row2 p {color: #999; font-size: 11px;}
+
+#wrap #footer .right {width: 200px; height: 100%; display: flex; justify-content: center; align-items: center;}
+#wrap #footer .right select {width: 80%; height: 30px; border: 1px solid #ddd; padding: 0 0 0 10px;}
+
+
+/* 모달창 */
+#wrap .modal {position: fixed; z-index: 4; background: rgba(0,0,0,.5); width: 100%; height: 100%; top: 0; left: 0;}
+#wrap .modal .wrap {width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;}
+#wrap .modal .wrap .container {width: 550px; background: #fff;}
+#wrap .modal .wrap .container .gap {}
+#wrap .modal .wrap .container .gap .title {width: 100%; height: 60px; display: flex; align-items: center; justify-content: flex-start; background-color: #1d8844;}
+#wrap .modal .wrap .container .gap .title h1 {font-size: 18px; font-weight: 500; color: #fff; padding: 0 0 0 20px;}
+#wrap .modal .wrap .container .gap .content {padding: 25px;}
+#wrap .modal .wrap .container .gap .content ul {}
+#wrap .modal .wrap .container .gap .content ul li {padding: 5px 0; font-size: 14px; color: #555;}
+#wrap .modal .wrap .container .gap .button-box {width: 100%; height: 60px; display: flex; align-items: center; justify-content: flex-end; padding: 0 20px;}
+#wrap .modal .wrap .container .gap .button-box button {height: 40px; padding: 0 20px; cursor: pointer;}
